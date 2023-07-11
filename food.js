@@ -1,9 +1,11 @@
 // Initiate a food
 let food = { x: 5, y: 16 };
+let score = 0;
 
 const updateFood = () => {
     if (onSnake(food)) {
         growSnake();
+        score += 1;
         food = getNewFoodPosition();
     }
 }

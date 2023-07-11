@@ -11,7 +11,7 @@ const main = () => {
     //     gameStart = isGameStart();
     // }
     if (gameOver) {
-        alert("Game Over");
+        alert("Game Over! Your score is: " + score);
         resetGame();
     }
 }
@@ -51,5 +51,6 @@ const resetGame = () => {
         { x: 11, y: 8 },
     ];
     food = { x: 5, y: 16 };
+    score = 0;
     main();
 }
