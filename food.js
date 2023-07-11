@@ -1,4 +1,5 @@
-let food = { x: 4, y: 16 };
+// Initiate a food
+let food = { x: 5, y: 16 };
 
 const updateFood = () => {
     if (onSnake(food)) {
@@ -7,6 +8,7 @@ const updateFood = () => {
     }
 }
 
+// Draw food block on game board
 const drawFood = (gameBoard) => {
     const foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;

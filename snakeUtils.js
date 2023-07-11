@@ -1,14 +1,14 @@
-const GRID_SIZE = 21;
+const GRID_SIZE = 25;
 
+// When snakeHead (first coordinate in snakeBody) hits food
 const onSnake = (position) => {
-    for (let i = 0; i < snakeBody.length; i++) {
-        if (equalPositions(position, snakeBody[i])) {
-            return true;
-        }
+    if (equalPositions(position, snakeBody[0])) {
+        return true;
     }
     return false;
 }
 
+// Helper function to compare 2 position
 const equalPositions = (pos1, pos2) => {
     return pos1.x === pos2.x && pos1.y === pos2.y;
 }
@@ -19,11 +19,12 @@ const growSnake = () => {
 
 const getNewFoodPosition = () => {
     let randomFoodPosition = randomGridPosition();
+    // Fix coincidence of overlaying new food position & current snake head
     while (onSnake(randomFoodPosition)) {
         randomFoodPosition = randomGridPosition();
     }
     return randomFoodPosition;
-} 
+}
 
 const randomGridPosition = () => {
     return {
