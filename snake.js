@@ -2,7 +2,7 @@
 const SNAKE_SPEED = 10;
 
 // Create initial 3-block snake
-const snakeBody = [
+let snakeBody = [
     { x: 11, y: 10 },
     { x: 11, y: 9 },
     { x: 11, y: 8 },

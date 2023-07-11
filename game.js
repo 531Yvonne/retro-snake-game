@@ -12,7 +12,7 @@ const main = () => {
     // }
     if (gameOver) {
         alert("Game Over");
-        clearInterval(gameLoop);
+        resetGame();
     }
 }
 
@@ -42,4 +42,14 @@ const isGameStart = () => {
         keyPressed = true;
     });
     return keyPressed;
+}
+
+const resetGame = () => {
+    snakeBody = [
+        { x: 11, y: 10 },
+        { x: 11, y: 9 },
+        { x: 11, y: 8 },
+    ];
+    food = { x: 5, y: 16 };
+    main();
 }
